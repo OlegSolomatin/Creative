@@ -1,0 +1,146 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  color: black;
+  position: fixed;
+}
+
+@keyframes rotate {
+  /*0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }*/
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.containerFigure {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  transform-style: preserve-3d;
+  animation: rotate 6s linear infinite;
+  transform: rotate3d(1, 1, 1, -60deg);
+}
+
+.containerFigure:hover, .containerFigure:focus {
+  transform: rotate3d(1, 1, 1, 60deg);
+}
+
+.figureBlock {
+  width: 100px;
+  height: 100px;
+  background: aqua;
+  position: absolute;
+}
+
+.figureBlock:nth-child(1) {
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  transform: rotateX(-90deg) translateZ(50px) translateY(50px);
+}
+
+.figureBlock:nth-child(2) {
+  margin: auto 0;
+  left: 0;
+  top: 100px;
+  background: orange;
+  transform: rotateY(90deg) translateZ(50px) translateX(50px);
+}
+
+.figureBlock:nth-child(3) {
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rebeccapurple;
+}
+
+.figureBlock:nth-child(4) {
+  margin: auto 0;
+  right: 0;
+  top: 100px;
+  background: red;
+  transform: rotateY(90deg) translateZ(-50px) translateX(50px);
+}
+
+.figureBlock:nth-child(5) {
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  top: 200px;
+  transform: rotateX(-90deg) translateZ(-50px) translateY(50px);
+}
+
+.figureBlock:nth-child(6) {
+  margin: auto;
+  top: 100px;
+  background: blue;
+  transform: translateZ(-100px);
+  right: 0;
+  left: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "OpenSans-Regular", sans-serif;
+}
+
+label {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul, li, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: unset;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.2;
+}
+
+h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+  content: none;
+}
+
+h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
+  content: none;
+}
+
+/*# sourceMappingURL=index.css.map */

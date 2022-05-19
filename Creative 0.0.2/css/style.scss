@@ -1,0 +1,190 @@
+$bgBlack: #181818;
+$bgBlackPost: #202020;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: OpenSans-Regular, sans-serif;
+}
+
+label {
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+ul, li, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: unset;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.2;
+}
+h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+  content: none;
+}
+h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
+  content: none;
+}
+
+.container{
+  background: $bgBlack;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px 0;
+}
+
+.containerItem_info{
+  width: 90vw;
+  height: 300px;
+  border-radius: 20px;
+  background:$bgBlackPost;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.article-thumbnail{
+  width: 50%;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+}
+.article{
+  width: 50%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: space-between;
+  padding: 20px;
+  color: white;
+  header{
+    display: flex;
+    flex-wrap: wrap;
+    .containerBadges{
+      width: 100%;
+      min-width: 100px;
+      max-width: max-content;
+      font-size: 10px;
+      display: flex;
+      margin: 0 10px 10px 0;
+      .badgesLeft{
+        background: $bgBlack;
+        color: white;
+        width: 50%;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        height: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .bad{
+        background: red;
+      }
+      .med{
+        background: yellow;
+      }
+      .well{
+        background: greenyellow;
+      }
+      .badgesRight{
+        width: 50%;
+        height: 15px;
+        color: white;
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  h2{
+    margin: 10px 0;
+  }
+  section{
+    margin: 10px 0;
+    font-size: 12px;
+  }
+  footer{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    img{
+      width: 50px;
+      height: 50px;
+      border-radius: 20px;
+    }
+    span:nth-child(2){
+      font-weight: bold;
+      margin: 0 10px;
+    }
+  }
+}
+.article-thumbnail::after{
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  z-index: 3;
+  left: 5%;
+  height: 100%;
+  top: 0;
+  width: 50%;
+  background:
+          linear-gradient(90deg,
+                  /*hsla(88,86%,43%,0) 0,
+                  hsla(88,86%,43%,.013) 8.1%,
+                  hsla(88,86%,43%,.049) 15.5%,
+                  hsla(88,86%,43%,.104) 22.5%,
+                  hsla(88,86%,43%,.175) 29%,
+                  hsla(88,86%,43%,.259) 35.3%,
+                  hsla(88,86%,43%,.352) 41.2%,
+                  hsla(88,86%,43%,.45) 47.1%,
+                  hsla(88,86%,43%,.55) 52.9%,
+                  hsla(88,86%,43%,.648) 58.8%,
+                  hsla(88,86%,43%,.741) 64.7%,
+                  hsla(88,86%,43%,.825) 71%,
+                  hsla(88,86%,43%,.896) 77.5%,
+                  hsla(88,86%,43%,.951) 84.5%,
+                  hsla(88,86%,43%,.987) 91.9%,*/
+                  hsla(0, 0%, 13%,0) 0,
+                  hsla(0, 0%, 13%,.013) 8.1%,
+                  hsla(0, 0%, 13%,.049) 15.5%,
+                  hsla(0, 0%, 13%,.104) 22.5%,
+                  hsla(0, 0%, 13%,.175) 29%,
+                  hsla(0, 0%, 13%,.259) 35.3%,
+                  hsla(0, 0%, 13%,.352) 41.2%,
+                  hsla(0, 0%, 13%,.45) 47.1%,
+                  hsla(0, 0%, 13%,.55) 52.9%,
+                  hsla(0, 0%, 13%,.648) 58.8%,
+                  hsla(0, 0%, 13%,.741) 64.7%,
+                  hsla(0, 0%, 13%,.825) 71%,
+                  hsla(0, 0%, 13%,.896) 77.5%,
+                  hsla(0, 0%, 13%,.951) 84.5%,
+                  hsla(0,0%,13%,.987) 91.9%,
+                  hsla(0, 0%, 13%, 1)
+          );
+}

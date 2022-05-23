@@ -1,0 +1,201 @@
+@font-face {
+  font-family: "AppleTextFontRegular";
+  src: url("../Fonts/SF-Pro-Text-Regular.otf");
+}
+@font-face {
+  font-family: "AppleTextFontLight";
+  src: url("../Fonts/SF-Pro-Text-Light.otf");
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: AppleTextFontRegular, sans-serif;
+}
+
+label {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul, li, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: unset;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.2;
+}
+
+h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+  content: none;
+}
+
+h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
+  content: none;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.iphone {
+  width: calc(271.24431px - (9.5px * 2));
+  height: calc(556.525038px - (8px * 2));
+  background: #181818;
+  border-radius: 20px;
+  position: relative;
+  padding: 8px 9.5px;
+}
+
+.app_icon_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: auto;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.2px;
+  font-family: AppleTextFontLight;
+  font-size: 0.44em;
+}
+.app_icon_container .app_icon {
+  margin-bottom: 2px;
+}
+.app_icon_container:nth-child(5) .app_icon:before {
+  content: "175";
+  position: absolute;
+  width: auto;
+  height: 15px;
+  background: #FE363C;
+  border-radius: 10px;
+  right: -6px;
+  top: -6.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3px;
+  min-width: 8px;
+  font-family: AppleTextFontRegular;
+  font-size: 1.2em;
+}
+.app_icon_container:nth-child(18) .app_icon:before {
+  content: "3";
+  position: absolute;
+  width: auto;
+  height: 15px;
+  background: #FE363C;
+  border-radius: 10px;
+  right: -6px;
+  top: -6.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3px;
+  min-width: 8px;
+  font-family: AppleTextFontRegular;
+  font-size: 1.2em;
+}
+
+.app_icon {
+  position: relative;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #9afd7d 0%, #43e62f 100%);
+  color: #fff;
+}
+
+.iphone_bang {
+  width: 101.669196px;
+  height: 20.295903px;
+  background: #202020;
+  border: 1px solid #181818;
+  border-bottom-left-radius: 14pt;
+  border-bottom-right-radius: 14pt;
+  position: absolute;
+  top: calc(8px - 1px);
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 100;
+}
+
+.iphone_bottom_nav {
+  position: absolute;
+  inset: 479px 0 0 0;
+  margin: 0 auto;
+  width: 237px;
+  height: 62px;
+  border-radius: 20px;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  z-index: 2;
+}
+
+.iphone_display {
+  width: calc(100% - (10px * 2));
+  height: calc(100% - 48px);
+  padding: 48px 10px 0;
+  background: #222222 url("../img/photo_2022-05-22_19-50-42.jpg") no-repeat;
+  background-size: 100% 100%;
+  border-radius: 15px;
+  z-index: 1;
+  overflow: auto;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  grid-auto-flow: row;
+  grid-template-columns: 40px 40px 40px 40px;
+  grid-template-rows: 51.2px 51.2px 51.2px 51.2px 51.2px 51.2px;
+  gap: 12px 18px;
+  grid-template-areas: ". . . ." ". . . ." ". . . ." ". . . ." ". . . ." ". . . .";
+}
+.iphone_display::-webkit-scrollbar {
+  width: 0;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+}
+.content img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

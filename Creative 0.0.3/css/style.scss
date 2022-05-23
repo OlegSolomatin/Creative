@@ -3,7 +3,10 @@ $bgBlackBang: #202020;
 $bgBlackDisplay: #222222;
 $radiusDisplay: 14pt;
 $paddingDisplay: 7px;
+$whiteText: #FBFCFD;
 $notificationsColor: #FE363C;
+$blueDark: #1b78f1;
+$blueLight: #1abff9;
 
 @font-face {
   font-family: 'AppleTextFontRegular';
@@ -12,6 +15,10 @@ $notificationsColor: #FE363C;
 @font-face {
   font-family: 'AppleTextFontLight';
   src: url("../Fonts/SF-Pro-Text-Light.otf");
+}
+@font-face {
+  font-family: 'AppleTextFontSemibold';
+  src: url("../Fonts/SF-Pro-Text-Semibold.otf");
 }
 
 @mixin notificationApp($value) {
@@ -136,6 +143,45 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   color: #fff;
 }
 
+.app_icon{
+  &_calendar{
+    background: #fff;
+  }
+  &_photo{
+    background: #fff;
+  }
+  &_mail{
+    background: linear-gradient(to top, #1abff9 0%,#1b78f1 100%);
+  }
+  &_camera{
+    background: linear-gradient(to bottom, #dbdae0 0%, #97969c 100%);
+  }
+  &_whether{
+    background: linear-gradient(to bottom, #125ab7 0%,#2f9be4 100%);
+  }
+  &_clock{
+    background: #202020;
+  }
+  &_appStore{
+    background: linear-gradient(to bottom, #1abff9 0%, #1d7af2 100%);
+  }
+  &_podcasts{
+    background: linear-gradient(to bottom, #cc67fa 0%, #8932bf 100%);
+  }
+  &_books{
+    background: linear-gradient(to bottom,#fe9807 0%,#fa741a 100%);
+  }
+  &_health{
+    background: #fff;
+  }
+  &_home{
+    background: #fff;
+  }
+  &_wallet{
+    background: linear-gradient(to bottom, #1e1e20 0%,#1e1e1d 100%);
+  }
+}
+
 .iphone_bang{
   width: 101.669196px;
   height: 20.295903px;
@@ -149,6 +195,75 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   right: 0;
   margin: auto;
   z-index: 100;
+}
+
+.iphone_left_our_bang{
+  position: absolute;
+  color: $whiteText;
+  z-index: 10;
+  font: {
+    family: AppleTextFontSemibold;
+    size: 0.65em;
+  }
+  margin: 9px 18px;
+  letter-spacing: -0.4px;
+}
+
+.iphone_right_our_bang{
+  position: absolute;
+  right: 9.5px;
+  margin: 11px 12.3px;
+  z-index: 10;
+  color: $whiteText;
+  display: flex;
+  align-items: center;
+  font: {
+    family: AppleTextFontSemibold;
+    size: 0.45em;
+  }
+  .connect{
+    display: flex;
+    .signal{
+      width: 10px;
+      height: 8px;
+      svg{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .battery{
+    width: 11.6px;
+    height: 4.5px;
+    background: transparent;
+    border-radius: 1px;
+    padding: 1px;
+    outline: 0.5px solid #7f828b;
+    margin-left: 3px;
+    position: relative;
+
+    &:before{
+      content: "";
+      position: absolute;
+      right: -2px;
+      width: 1px;
+      height: 2px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: #7f828b;
+      border-top-right-radius: 0.5px;
+      border-bottom-right-radius: 0.5px;
+    }
+
+    .battery_full{
+      width: 78%;
+      height: 100%;
+      background: white;
+      border-radius: 1px;
+    }
+  }
 }
 
 .iphone_bottom_nav{
@@ -172,7 +287,7 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   width: calc(100% - (10px * 2));
   height: calc(100% - 48px);
   padding: 48px 10px 0;
-  background: $bgBlackDisplay url("../img/photo_2022-05-22_19-50-42.jpg") no-repeat;
+  background: $bgBlackDisplay url("../img/iOS14dark.png") no-repeat;
   background-size: 100% 100%;
   border-radius: 15px;
   z-index: 1;
@@ -190,6 +305,7 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
     width: 0;
   }
 }
+
 img{
   width: 40px ;
   height: 40px;

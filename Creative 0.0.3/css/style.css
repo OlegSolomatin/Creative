@@ -6,6 +6,10 @@
   font-family: "AppleTextFontLight";
   src: url("../Fonts/SF-Pro-Text-Light.otf");
 }
+@font-face {
+  font-family: "AppleTextFontSemibold";
+  src: url("../Fonts/SF-Pro-Text-Semibold.otf");
+}
 body {
   margin: 0;
   padding: 0;
@@ -128,6 +132,43 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   color: #fff;
 }
 
+.app_icon_calendar {
+  background: #fff;
+}
+.app_icon_photo {
+  background: #fff;
+}
+.app_icon_mail {
+  background: linear-gradient(to top, #1abff9 0%, #1b78f1 100%);
+}
+.app_icon_camera {
+  background: linear-gradient(to bottom, #dbdae0 0%, #97969c 100%);
+}
+.app_icon_whether {
+  background: linear-gradient(to bottom, #125ab7 0%, #2f9be4 100%);
+}
+.app_icon_clock {
+  background: #202020;
+}
+.app_icon_appStore {
+  background: linear-gradient(to bottom, #1abff9 0%, #1d7af2 100%);
+}
+.app_icon_podcasts {
+  background: linear-gradient(to bottom, #cc67fa 0%, #8932bf 100%);
+}
+.app_icon_books {
+  background: linear-gradient(to bottom, #fe9807 0%, #fa741a 100%);
+}
+.app_icon_health {
+  background: #fff;
+}
+.app_icon_home {
+  background: #fff;
+}
+.app_icon_wallet {
+  background: linear-gradient(to bottom, #1e1e20 0%, #1e1e1d 100%);
+}
+
 .iphone_bang {
   width: 101.669196px;
   height: 20.295903px;
@@ -141,6 +182,68 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   right: 0;
   margin: auto;
   z-index: 100;
+}
+
+.iphone_left_our_bang {
+  position: absolute;
+  color: #FBFCFD;
+  z-index: 10;
+  font-family: AppleTextFontSemibold;
+  font-size: 0.65em;
+  margin: 9px 18px;
+  letter-spacing: -0.4px;
+}
+
+.iphone_right_our_bang {
+  position: absolute;
+  right: 9.5px;
+  margin: 11px 12.3px;
+  z-index: 10;
+  color: #FBFCFD;
+  display: flex;
+  align-items: center;
+  font-family: AppleTextFontSemibold;
+  font-size: 0.45em;
+}
+.iphone_right_our_bang .connect {
+  display: flex;
+}
+.iphone_right_our_bang .connect .signal {
+  width: 10px;
+  height: 8px;
+}
+.iphone_right_our_bang .connect .signal svg {
+  width: 100%;
+  height: 100%;
+}
+.iphone_right_our_bang .battery {
+  width: 11.6px;
+  height: 4.5px;
+  background: transparent;
+  border-radius: 1px;
+  padding: 1px;
+  outline: 0.5px solid #7f828b;
+  margin-left: 3px;
+  position: relative;
+}
+.iphone_right_our_bang .battery:before {
+  content: "";
+  position: absolute;
+  right: -2px;
+  width: 1px;
+  height: 2px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #7f828b;
+  border-top-right-radius: 0.5px;
+  border-bottom-right-radius: 0.5px;
+}
+.iphone_right_our_bang .battery .battery_full {
+  width: 78%;
+  height: 100%;
+  background: white;
+  border-radius: 1px;
 }
 
 .iphone_bottom_nav {
@@ -164,7 +267,7 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   width: calc(100% - (10px * 2));
   height: calc(100% - 48px);
   padding: 48px 10px 0;
-  background: #222222 url("../img/photo_2022-05-22_19-50-42.jpg") no-repeat;
+  background: #222222 url("../img/iOS14dark.png") no-repeat;
   background-size: 100% 100%;
   border-radius: 15px;
   z-index: 1;

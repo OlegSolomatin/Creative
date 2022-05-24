@@ -136,8 +136,9 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
 .app_icon{
   position: relative;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  padding: 5px;
+  width: calc(40px - 10px);
+  height: calc(40px - 10px);
   border-radius: 10px;
   background: linear-gradient(to bottom, #9afd7d 0%,#43e62f 100%);
   color: #fff;
@@ -146,6 +147,27 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
 .app_icon{
   &_calendar{
     background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    div:first-child{
+      color: $notificationsColor;
+      line-height: 1;
+      margin-bottom: 1px;
+      font: {
+        family: AppleTextFontSemibold;
+        size: 1em;
+      }
+    }
+    div:last-child{
+      color: $bgBlack;
+      line-height: 1;
+      font: {
+        family: AppleTextFontLight;
+        size: 3.3em;
+      }
+    }
   }
   &_photo{
     background: #fff;
@@ -158,6 +180,65 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   }
   &_whether{
     background: linear-gradient(to bottom, #125ab7 0%,#2f9be4 100%);
+  }
+  &_reminders{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    .reminders_item{
+      width: 20px;
+      height: 0;
+      border-top: 0.5px solid #d4d4d4;
+      margin: 5px 0;
+      position: relative;
+      &_rounded{
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        top: -1px;
+        bottom: 0;
+        left: -10px;
+        margin: auto;
+        &:before{
+          content: "";
+          background: #fff;
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          inset: 0;
+          margin: auto;
+        }
+      }
+      &:first-child{
+        .reminders_item_rounded{
+          border: 1px solid #1a89ff;
+          &:before{
+            background: #1a89ff;
+          }
+        }
+      }
+      &:nth-child(2){
+        .reminders_item_rounded{
+          border: 1px solid #ff3f33;
+          &:before{
+            background: #ff3f33;
+          }
+        }
+      }
+      &:last-child{
+        .reminders_item_rounded{
+          border: 1px solid #ff9100;
+          &:before{
+            background: #ff9100;
+          }
+        }
+      }
+    }
   }
   &_clock{
     background: #202020;
@@ -287,6 +368,9 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   width: calc(100% - (10px * 2));
   height: calc(100% - 48px);
   padding: 48px 10px 0;
+  /*
+  background: url("../img/photo_2022-05-22_19-50-42.jpg") no-repeat;
+  */
   background: $bgBlackDisplay url("../img/iOS14dark.png") no-repeat;
   background-size: 100% 100%;
   border-radius: 15px;

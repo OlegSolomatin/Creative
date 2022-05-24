@@ -125,8 +125,9 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
 .app_icon {
   position: relative;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  padding: 5px;
+  width: calc(40px - 10px);
+  height: calc(40px - 10px);
   border-radius: 10px;
   background: linear-gradient(to bottom, #9afd7d 0%, #43e62f 100%);
   color: #fff;
@@ -134,6 +135,23 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
 
 .app_icon_calendar {
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.app_icon_calendar div:first-child {
+  color: #FE363C;
+  line-height: 1;
+  margin-bottom: 1px;
+  font-family: AppleTextFontSemibold;
+  font-size: 1em;
+}
+.app_icon_calendar div:last-child {
+  color: #181818;
+  line-height: 1;
+  font-family: AppleTextFontLight;
+  font-size: 3.3em;
 }
 .app_icon_photo {
   background: #fff;
@@ -146,6 +164,59 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
 }
 .app_icon_whether {
   background: linear-gradient(to bottom, #125ab7 0%, #2f9be4 100%);
+}
+.app_icon_reminders {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+.app_icon_reminders .reminders_item {
+  width: 20px;
+  height: 0;
+  border-top: 0.5px solid #d4d4d4;
+  margin: 5px 0;
+  position: relative;
+}
+.app_icon_reminders .reminders_item_rounded {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  top: -1px;
+  bottom: 0;
+  left: -10px;
+  margin: auto;
+}
+.app_icon_reminders .reminders_item_rounded:before {
+  content: "";
+  background: #fff;
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  inset: 0;
+  margin: auto;
+}
+.app_icon_reminders .reminders_item:first-child .reminders_item_rounded {
+  border: 1px solid #1a89ff;
+}
+.app_icon_reminders .reminders_item:first-child .reminders_item_rounded:before {
+  background: #1a89ff;
+}
+.app_icon_reminders .reminders_item:nth-child(2) .reminders_item_rounded {
+  border: 1px solid #ff3f33;
+}
+.app_icon_reminders .reminders_item:nth-child(2) .reminders_item_rounded:before {
+  background: #ff3f33;
+}
+.app_icon_reminders .reminders_item:last-child .reminders_item_rounded {
+  border: 1px solid #ff9100;
+}
+.app_icon_reminders .reminders_item:last-child .reminders_item_rounded:before {
+  background: #ff9100;
 }
 .app_icon_clock {
   background: #202020;
@@ -267,6 +338,9 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   width: calc(100% - (10px * 2));
   height: calc(100% - 48px);
   padding: 48px 10px 0;
+  /*
+  background: url("../img/photo_2022-05-22_19-50-42.jpg") no-repeat;
+  */
   background: #222222 url("../img/iOS14dark.png") no-repeat;
   background-size: 100% 100%;
   border-radius: 15px;

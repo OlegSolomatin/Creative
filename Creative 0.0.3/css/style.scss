@@ -240,6 +240,45 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
       }
     }
   }
+  &_notes{
+    position: relative;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .notes_item_top{
+      width: 40px;
+      height: 5px;
+      background: linear-gradient(to bottom, #ffd26c 0% , #fad107 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      padding-bottom: 5px;
+      border-bottom: 0.5px solid $bgBlackDisplay;
+      &:before{
+        content: ". . . . . . . . . . . . . . . . . . . .";
+        position: absolute;
+        letter-spacing: -1px;
+        bottom: -3px;
+        width: 40px;
+        left: 0;
+        color: #c6cac9;
+      }
+    }
+    .notes_item_lines{
+      width: 40px;
+      border-top: 0.5px solid #c7c7c7;
+      position: absolute;
+      &:nth-child(2){
+        top: 20px;
+      }
+      &:last-child{
+        bottom: 10px;
+      }
+    }
+  }
   &_clock{
     background: #202020;
   }
@@ -260,6 +299,69 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   }
   &_wallet{
     background: linear-gradient(to bottom, #1e1e20 0%,#1e1e1d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .wallet_item_container{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .wallet_item_back{
+        width: 100%;
+        height: 20px;
+        background: #dad6cb;
+        z-index: 1;
+        border-radius: 2px;
+        position: relative;
+      }
+      .wallet_item_card{
+        width: 28px;
+        height: 10px;
+        border-radius: 2px;
+        position: absolute;
+        &:nth-child(2){
+          z-index: 2;
+          background: #39a0da;
+          top: 11px;
+        }
+        &:nth-child(3){
+          z-index: 3;
+          background: #f5b307;
+          top: 13px;
+        }
+        &:nth-child(4){
+          z-index: 4;
+          background: #51c139;
+          top: 15px;
+        }
+        &:nth-child(5){
+          z-index: 5;
+          background: #eb6e58;
+          top: 17px;
+        }
+      }
+      .wallet_item_front{
+        width: 30px;
+        background: #dad6cb;
+        height: 8px;
+        position: absolute;
+        z-index: 6;
+        top: 19px;
+        &:before{
+          content: "";
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          margin: auto;
+          top: -7px;
+          left: 0;
+          right: 0;
+          background: #eb6e58;
+          clip-path: polygon(27.75% 34.25%, 71.5% 34.25%, 66.25% 36.75%, 64% 38.75%, 61.75% 41.75%, 59.5% 44.75%, 57.25% 47.25%, 53.75% 49%, 50.5% 49.75%, 47.5% 49.75%, 44.5% 48.75%, 41.25% 46.5%, 38.75% 44%, 37% 41.5%, 34.75% 39.25%, 31.5% 36.75%);
+        }
+      }
+    }
   }
 }
 

@@ -80,22 +80,37 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
 }
 
 .container{
-  width: 100%;
+  width: calc(100% - 50px);
   height: auto;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 25px;
+  @media screen and (max-width: 467px) {
+    padding: 0;
+    align-items: start;
+    width: 100%;
+  }
 }
 
 .iphone{
   width: calc(271.24431px - (9.5px * 2));//71.5mm
   height: calc(556.525038px - (8px * 2));//146.7mm
   background: $bgBlack;
-  border-radius: 20px;
+  border-radius: 30px;
   position: relative;
   padding: 8px 9.5px;
+  /*background-image: url("../img/iPhone13.jpg");
+  background-size: 100% 100%;
+  background-position: center;*/
+
+  @media screen and (max-width: 271.2px){
+    width: 271px;
+    height: 556px;
+    padding: 0;
+    border-radius: 0;
+  }
 }
 
 .app_icon_container{
@@ -145,6 +160,30 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
 }
 
 .app_icon{
+  &_faceTime{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    .faceTime_item{
+      width: 20px;
+      height: 16px;
+      background: #fff;
+      border-radius: 4px;
+      position: relative;
+      margin-left: 1.5px;
+
+      &:before{
+        content: "";
+        position: absolute;
+        background: #fff;
+        width: 7px;
+        height: 16px;
+        border-radius: 50px;
+        right: -8px;
+        clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 70%);
+      }
+    }
+  }
   &_calendar{
     background: #fff;
     display: flex;
@@ -378,6 +417,9 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   right: 0;
   margin: auto;
   z-index: 100;
+  @media screen and (max-width: 271.2px){
+    top: 0;
+  }
 }
 
 .iphone_left_our_bang{
@@ -390,6 +432,10 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   }
   margin: 9px 18px;
   letter-spacing: -0.4px;
+
+  @media screen and (max-width: 271.2px){
+    margin-top: 4px;
+  }
 }
 
 .iphone_right_our_bang{
@@ -447,6 +493,10 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
       border-radius: 1px;
     }
   }
+
+  @media screen and (max-width: 271.2px){
+    margin-top: 6px;
+  }
 }
 
 .iphone_bottom_nav{
@@ -475,7 +525,7 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   */
   background: $bgBlackDisplay url("../img/iOS14dark.png") no-repeat;
   background-size: 100% 100%;
-  border-radius: 15px;
+  border-radius: 25px;
   z-index: 1;
   overflow: auto;
   position: relative;
@@ -489,6 +539,10 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
 
   &::-webkit-scrollbar {
     width: 0;
+  }
+
+  @media screen and (max-width: 271.2px){
+    border-radius: 0;
   }
 }
 

@@ -87,10 +87,11 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   align-items: center;
   justify-content: center;
   padding: 25px;
-  @media screen and (max-width: 467px) {
+  @media screen and (max-width: 480px) {
     padding: 0;
     align-items: start;
     width: 100%;
+    height: 100vh;
   }
 }
 
@@ -105,9 +106,9 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   background-size: 100% 100%;
   background-position: center;*/
 
-  @media screen and (max-width: 271.2px){
-    width: 271px;
-    height: 556px;
+  @media screen and (max-width: 480px){
+    width: 100%;
+    height: 100%;
     padding: 0;
     border-radius: 0;
   }
@@ -210,6 +211,58 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   }
   &_photo{
     background: #fff;
+    .photo_item{
+      width: 15px;
+      height: 9px;
+      border-radius: 10px;
+      position: absolute;
+      opacity: 0.8;
+      margin: auto;
+      transform-origin: 106% 50% 0;
+      top: 0;
+      bottom: 0;
+      left: 4px;
+      mix-blend-mode: multiply;
+      &:first-child{
+        background: #d783a5;
+        z-index: 5;
+      }
+      &:nth-child(2){
+        background: #a98ec3;
+        z-index: 4;
+        transform: rotate(-45deg);
+      }
+      &:nth-child(3){
+        background: #68a5d4;
+        z-index: 5;
+        transform: rotate(-90deg);
+      }
+      &:nth-child(4){
+        background: #6ebf9e;
+        z-index: 4;
+        transform: rotate(-135deg);
+      }
+      &:nth-child(5){
+        background: #a9d562;
+        transform: rotate(-180deg);
+        z-index: 5;
+      }
+      &:nth-child(6){
+        background: #f5e321;
+        z-index: 4;
+        transform: rotate(-225deg);
+      }
+      &:nth-child(7){
+        background: #faab34;
+        z-index: 5;
+        transform: rotate(-270deg);
+      }
+      &:last-child{
+        background: #fb7260;
+        z-index: 4;
+        transform: rotate(-315deg);
+      }
+    }
   }
   &_mail{
     background: linear-gradient(to top, #1abff9 0%,#1b78f1 100%);
@@ -417,7 +470,7 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   right: 0;
   margin: auto;
   z-index: 100;
-  @media screen and (max-width: 271.2px){
+  @media screen and (max-width: 480px){
     top: 0;
   }
 }
@@ -433,7 +486,7 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   margin: 9px 18px;
   letter-spacing: -0.4px;
 
-  @media screen and (max-width: 271.2px){
+  @media screen and (max-width: 480px){
     margin-top: 4px;
   }
 }
@@ -494,14 +547,14 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
     }
   }
 
-  @media screen and (max-width: 271.2px){
+  @media screen and (max-width: 480px){
     margin-top: 6px;
   }
 }
 
 .iphone_bottom_nav{
   position: absolute;
-  inset: 479px 0 0 0;
+  inset: calc(100% - 77px) 0 0 0;
   margin: 0 auto;
   width: 237px;
   height: 62px;
@@ -541,7 +594,7 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
     width: 0;
   }
 
-  @media screen and (max-width: 271.2px){
+  @media screen and (max-width: 480px){
     border-radius: 0;
   }
 }

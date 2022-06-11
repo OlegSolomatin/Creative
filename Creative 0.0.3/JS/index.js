@@ -32,9 +32,9 @@ setInterval(date, 1000000)
 date();
 
 const getLevel = document.querySelector('#get-level');
-const output = document.querySelector('#output');
+const level = document.querySelector('#levelChange');
 
-getLevel.addEventListener('click', async () => {
+/*getLevel.addEventListener('click', async () => {
     if (!navigator.getBattery) {
         output.textContent = 'Battery manager is unsupported';
     } else {
@@ -42,5 +42,26 @@ getLevel.addEventListener('click', async () => {
         const level = Math.round(manager.level * 100);
         output.textContent = `Battery level: ${level} %`;
     }
+});*/
+
+navigator.getBattery().then(battery => {
+    if (!navigator.getBattery) {
+        level.textContent = '78%';
+    } else {
+        battery.onlevelchange = () => {
+            let getLevel = Math.round(manager.level * 100);
+            document.querySelector('#levelChange').textContent = `${getLevel} %`;
+
+            /*if(battery.charging) {
+                document.querySelector('#stateBattery').textContent =
+                    "Charging time: " + (battery.chargingTime / 60);
+            }
+            else {
+                document.querySelector('#stateBattery').textContent =
+                    "Discharging time: " + (battery.dischargingTime / 60);
+            }*/
+        };
+    }
+
 });
 

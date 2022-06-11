@@ -39,8 +39,8 @@ getLevel.addEventListener('click', async () => {
         output.textContent = 'Battery manager is unsupported';
     } else {
         const manager = await navigator.getBattery();
-        const level = manager.level;
-        output.textContent = `Battery level: ${level}`;
+        const level = Math.round(manager.level * 100);
+        output.textContent = `Battery level: ${level} %`;
     }
 });
 

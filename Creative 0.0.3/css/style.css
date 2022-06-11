@@ -566,6 +566,13 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   height: 100%;
   background: white;
   border-radius: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iphone_right_our_bang .battery .battery_full .levelChange {
+  color: #181818;
+  font-size: 0.55em;
 }
 @media screen and (max-width: 480px) {
   .iphone_right_our_bang {

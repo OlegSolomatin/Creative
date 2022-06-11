@@ -595,6 +595,14 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
       height: 100%;
       background: white;
       border-radius: 1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .levelChange{
+        color: $bgBlack;
+        font-size: 0.55em;
+      }
     }
   }
 

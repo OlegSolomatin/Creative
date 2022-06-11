@@ -44,7 +44,19 @@ const level = document.querySelector('#levelChange');
     }
 });*/
 
-navigator.getBattery().then(battery => {
+function levelChange() {
+    if (!navigator.getBattery) {
+        level.textContent = '78';
+    } else {
+        battery.onlevelchange = () => {
+            let getLevel = Math.round(manager.level * 100);
+            document.querySelector('#levelChange').textContent = `${getLevel}`;
+        }
+    }
+}
+levelChange();
+
+/*getLevel.addEventListener('click', async () => {
     if (!navigator.getBattery) {
         level.textContent = '78%';
     } else {
@@ -52,16 +64,16 @@ navigator.getBattery().then(battery => {
             let getLevel = Math.round(manager.level * 100);
             document.querySelector('#levelChange').textContent = `${getLevel} %`;
 
-            /*if(battery.charging) {
+            /!*if(battery.charging) {
                 document.querySelector('#stateBattery').textContent =
                     "Charging time: " + (battery.chargingTime / 60);
             }
             else {
                 document.querySelector('#stateBattery').textContent =
                     "Discharging time: " + (battery.dischargingTime / 60);
-            }*/
+            }*!/
         };
     }
 
-});
+});*/
 

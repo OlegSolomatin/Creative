@@ -102,6 +102,9 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   letter-spacing: 0.2px;
   font-family: AppleTextFontLight;
   font-size: 0.44em;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 .app_icon_container .app_icon {
   margin-bottom: 2px;
@@ -203,7 +206,7 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
   height: 9px;
   border-radius: 10px;
   position: absolute;
-  opacity: 0.8;
+  opacity: 1;
   margin: auto;
   transform-origin: 106% 50% 0;
   top: 0;
@@ -255,6 +258,48 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after {
 }
 .app_icon_camera {
   background: linear-gradient(to bottom, #dbdae0 0%, #97969c 100%);
+}
+.app_icon_camera .camera_container {
+  width: 28px;
+  height: 19px;
+  position: absolute;
+  inset: 0 0 0 0;
+  margin: auto;
+  background: #2d2d2d;
+  border-radius: 3px;
+}
+.app_icon_camera .camera_lens {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.4px solid transparent;
+  background: linear-gradient(to bottom, #dbdae0 0%, #97969c 100%) border-box;
+  -webkit-mask: linear-gradient(#2d2d2d 0 0) padding-box, linear-gradient(#2d2d2d 0 0);
+  -webkit-mask-composite: xor;
+  /*5'*/
+  mask-composite: exclude;
+  position: absolute;
+  inset: 0 0 0 0;
+  margin: auto;
+}
+.app_icon_camera .camera_flash {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #f8db41;
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  animation: 3s infinite flash;
+}
+.app_icon_camera .camera_modul {
+  width: 11px;
+  height: 4px;
+  border-radius: 3px;
+  background: #2d2d2d;
+  position: absolute;
+  inset: -18px 0 0 0;
+  margin: auto;
 }
 .app_icon_whether {
   background: linear-gradient(to bottom, #125ab7 0%, #2f9be4 100%);
@@ -589,6 +634,18 @@ img {
   object-fit: cover;
   width: 100%;
   height: auto;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
